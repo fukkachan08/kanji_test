@@ -1,0 +1,39 @@
+.parts-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.parts-badge-container.small {
+  gap: 4px;
+}
+
+.parts-badge-container.large {
+  gap: 8px;
+}
+
+.parts-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Serif JP', serif;
+}
+
+.parts-badge-container.small .parts-badge {
+  padding: 2px 6px;
+  font-size: 11px;
+  border-radius: 10px;
+}
+
+.parts-badge-container.large .parts-badge {
+  padding: 8px 16px;
+  font-size: 18px;
+  border-radius: 20px;
+}

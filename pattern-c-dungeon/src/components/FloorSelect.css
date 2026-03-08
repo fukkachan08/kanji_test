@@ -1,0 +1,150 @@
+.floor-select-screen {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1A1A2E 0%, #16213E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.floor-select-container {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 2rem;
+  color: #FFE66D;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.title-icon {
+  font-size: 2.5rem;
+}
+
+.player-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.player-emoji {
+  font-size: 2.5rem;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.player-level {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFE66D;
+}
+
+.player-hp {
+  font-size: 0.9rem;
+  color: #A8E6CF;
+}
+
+.floors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.floor-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--theme-color, #4ECDC4);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.floor-card:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.floor-card.cleared {
+  border-color: #A8E6CF;
+  background: rgba(168, 230, 207, 0.1);
+}
+
+.floor-card.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #666;
+}
+
+.floor-emoji {
+  font-size: 2rem;
+  width: 50px;
+  text-align: center;
+}
+
+.floor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.floor-number {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.floor-name {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.floor-status {
+  font-size: 0.9rem;
+}
+
+.status-cleared {
+  color: #A8E6CF;
+  font-weight: bold;
+}
+
+.status-locked {
+  font-size: 1.5rem;
+}
+
+.status-open {
+  color: var(--theme-color, #4ECDC4);
+  font-weight: bold;
+}
+
+.hint-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+}

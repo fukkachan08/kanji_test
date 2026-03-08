@@ -1,0 +1,273 @@
+.break-puzzle {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+/* ヘッダー */
+.puzzle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.timer-icon {
+  font-size: 1.2rem;
+}
+
+.timer-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4ecdc4;
+  min-width: 30px;
+  text-align: center;
+}
+
+.timer-value.warning {
+  color: #ff6b6b;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.combo-value {
+  color: #ffe66d;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* 漢字表示エリア */
+.kanji-display-area {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 180px;
+}
+
+.kanji-character {
+  position: relative;
+  text-align: center;
+}
+
+.original-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 100px;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.kanji-character.breaking .original-kanji {
+  animation: break 0.5s forwards;
+}
+
+@keyframes break {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.break-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+}
+
+.break-part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  color: #1a1a2e;
+  opacity: 0;
+  animation: explode 1s var(--delay, 0s) forwards;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(calc(cos(var(--angle)) * 80px), calc(sin(var(--angle)) * 80px)) rotate(360deg) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 100px) rotate(0deg) scale(1);
+  }
+}
+
+.puzzle-hint {
+  text-align: center;
+}
+
+.puzzle-hint .reading {
+  font-size: 1.5rem;
+  color: #4ecdc4;
+  margin-bottom: 8px;
+}
+
+.puzzle-hint .meaning {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+/* ドロップゾーンエリア */
+.drop-zones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  min-height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.drop-zones.layout-leftright {
+  flex-direction: row;
+}
+
+.drop-zones.layout-topbottom {
+  flex-direction: column;
+}
+
+.drop-zones.layout-surround,
+.drop-zones.layout-nyou {
+  flex-direction: row;
+}
+
+.drop-zones.layout-single {
+  flex-direction: row;
+}
+
+/* パーツエリア */
+.parts-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parts-label {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.parts-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* 決定ボタン */
+.submit-area {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 16px 48px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+}
+
+.submit-btn:disabled {
+  background: #555;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.5);
+}
+
+/* 結果オーバーレイ */
+.break-puzzle.correct {
+  animation: flash-correct 0.5s;
+}
+
+.break-puzzle.wrong {
+  animation: shake 0.5s;
+}
+
+@keyframes flash-correct {
+  0%, 100% { background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%); }
+  50% { background: linear-gradient(180deg, #1a3a2e 0%, #165e3e 100%); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+.wrong-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 107, 107, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: fade-out 1s forwards;
+}
+
+.wrong-icon {
+  font-size: 100px;
+  color: #ff6b6b;
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

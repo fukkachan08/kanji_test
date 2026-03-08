@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #333;
+  background-color: #f8f6f0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* スクロールバーのスタイル */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* タッチデバイス向けの最適化 */
+@media (hover: none) {
+  button:active {
+    opacity: 0.8;
+  }
+}
+
+/* セーフエリア対応（iPhoneのノッチ対応） */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .app-header {
+    padding-top: calc(16px + env(safe-area-inset-top));
+  }
+
+  .app-footer {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}

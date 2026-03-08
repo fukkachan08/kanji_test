@@ -1,0 +1,202 @@
+.kanji-puzzle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: linear-gradient(145deg, #1a1a2e 0%, #0f0f1a 100%);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.puzzle-kanji-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(145deg, #16213E 0%, #0d1525 100%);
+  border-radius: 12px;
+  border: 3px solid #4ECDC4;
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+.target-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.target-kanji.outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #4ECDC4;
+  text-shadow: none;
+}
+
+.puzzle-prompt {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.choice-btn {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 16px;
+  border: 2px solid #4ECDC4;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #16213E 0%, #0d1525 100%);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.choice-btn:hover:not(.disabled) {
+  background: linear-gradient(145deg, #1a2a4a 0%, #102030 100%);
+  border-color: #6EEEE4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.choice-btn:active:not(.disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.choice-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* パズルUI */
+.puzzle-workspace {
+  width: 100%;
+  max-width: 280px;
+}
+
+.selected-parts-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 60px;
+  padding: 12px;
+  background: #0a0a14;
+  border-radius: 10px;
+  border: 2px dashed #3a3a5a;
+}
+
+.placeholder-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.selected-part {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.selected-part:hover {
+  transform: scale(1.1);
+}
+
+.parts-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.part-btn {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 56px;
+  height: 56px;
+  border: 3px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.part-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.part-btn.selected {
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.part-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.puzzle-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.action-btn {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-btn.reset {
+  background: linear-gradient(145deg, #3a3a4a 0%, #2a2a3a 100%);
+  color: #aaa;
+}
+
+.action-btn.reset:hover:not(:disabled) {
+  background: linear-gradient(145deg, #4a4a5a 0%, #3a3a4a 100%);
+}
+
+.action-btn.submit {
+  background: linear-gradient(145deg, #FF6B6B 0%, #E55B5B 100%);
+  color: #fff;
+}
+
+.action-btn.submit:hover:not(:disabled) {
+  background: linear-gradient(145deg, #FF7B7B 0%, #F56B6B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+}

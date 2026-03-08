@@ -1,0 +1,208 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100%;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* 問題表示エリア */
+.questionArea {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.questionLabel {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.reading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.meaning {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* DropZoneエリア */
+.dropArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  background: #f0f4f8;
+  border-radius: 16px;
+  min-height: 150px;
+}
+
+.dropZones {
+  display: flex;
+  gap: 16px;
+}
+
+.layoutLeftRight {
+  flex-direction: row;
+}
+
+.layoutTopBottom {
+  flex-direction: column;
+}
+
+.layoutSurround {
+  flex-direction: row;
+  position: relative;
+}
+
+.layoutSurround > div:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.layoutSurround > div:last-child {
+  position: relative;
+  margin-left: -20px;
+  z-index: 2;
+}
+
+/* コントロールエリア */
+.controlArea {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.hintButton {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid #FFE66D;
+  background-color: white;
+  color: #856404;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hintButton:hover {
+  background-color: #FFE66D;
+  color: #333;
+}
+
+.submitButton {
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background-color: #ddd;
+  color: #999;
+  border-radius: 25px;
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+}
+
+.submitButton.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+}
+
+.submitButton.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* パーツエリア */
+.partsArea {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 16px;
+  padding: 20px;
+  flex: 1;
+  min-height: 180px;
+}
+
+.partsLabel {
+  font-size: 0.85rem;
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.partsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .board {
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .questionArea {
+    padding: 16px;
+  }
+
+  .reading {
+    font-size: 1.5rem;
+  }
+
+  .meaning {
+    font-size: 1rem;
+  }
+
+  .dropArea {
+    padding: 20px 12px;
+  }
+
+  .dropZones {
+    gap: 10px;
+  }
+
+  .layoutSurround > div:last-child {
+    margin-left: -15px;
+  }
+
+  .controlArea {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hintButton,
+  .submitButton {
+    width: 100%;
+  }
+
+  .partsArea {
+    padding: 16px;
+    min-height: 150px;
+  }
+
+  .partsGrid {
+    gap: 8px;
+  }
+}

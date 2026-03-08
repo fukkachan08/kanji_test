@@ -1,0 +1,114 @@
+.story-animation {
+  width: 100%;
+}
+
+.story-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  min-height: 100px;
+}
+
+.kanji-assembly {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.assembly-part {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 8px;
+  color: #333;
+  font-family: 'Noto Serif JP', serif;
+  opacity: 0;
+  transform: scale(0.5) translateY(-20px);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.assembly-part.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.assembly-result {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  font-size: 52px;
+  font-weight: 900;
+  color: #333;
+  font-family: 'Noto Serif JP', serif;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-left: 12px;
+  position: relative;
+}
+
+.assembly-result::before {
+  content: '=';
+  position: absolute;
+  left: -20px;
+  font-size: 24px;
+  color: #666;
+}
+
+.assembly-result.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.story-scenes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.story-scene {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  font-family: 'Noto Serif JP', serif;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.story-scene.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scene-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: linear-gradient(135deg, #4ECDC4, #A8E6CF);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* カラーコード */
+  --color-hen: #FF6B6B;
+  --color-tsukuri: #4ECDC4;
+  --color-kanmuri: #FFE66D;
+  --color-ashi: #A8E6CF;
+  --color-kakoi: #C3B1E1;
+  --color-dokutai: #B0BEC5;
+
+  /* UI */
+  --bg-dark: #1A1A2E;
+  --bg-panel: #16213E;
+
+  font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: white;
+  background-color: var(--bg-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-dark);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* タッチ操作の最適化 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}

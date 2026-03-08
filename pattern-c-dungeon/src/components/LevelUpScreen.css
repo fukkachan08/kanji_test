@@ -1,0 +1,226 @@
+.levelup-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.98) 0%, rgba(10, 10, 20, 0.98) 100%);
+  z-index: 400;
+  overflow: hidden;
+}
+
+/* 紙吹雪 */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  left: var(--x);
+  width: 12px;
+  height: 12px;
+  background: var(--color);
+  border-radius: 2px;
+  animation: confetti-fall 3s linear var(--delay) infinite;
+  transform: rotate(var(--rotation));
+}
+
+@keyframes confetti-fall {
+  0% {
+    top: -20px;
+    opacity: 1;
+    transform: rotate(var(--rotation)) translateX(0);
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+    transform: rotate(calc(var(--rotation) + 720deg)) translateX(100px);
+  }
+}
+
+.levelup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px;
+  background: linear-gradient(145deg, #16213E 0%, #0d1525 100%);
+  border-radius: 24px;
+  border: 4px solid #FFE66D;
+  box-shadow:
+    0 0 50px rgba(255, 230, 109, 0.4),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: levelup-pop 0.5s ease-out;
+  z-index: 1;
+}
+
+@keyframes levelup-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.levelup-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star {
+  font-size: 2.5rem;
+  animation: star-spin 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 230, 109, 0.8));
+}
+
+.star.delay-1 {
+  animation-delay: 0.2s;
+  font-size: 3rem;
+}
+
+.star.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes star-spin {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.levelup-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #FFE66D;
+  margin: 0;
+  text-shadow:
+    0 0 20px rgba(255, 230, 109, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: title-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes title-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(255, 230, 109, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow:
+      0 0 40px rgba(255, 230, 109, 0.9),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.new-level {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.level-label {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #aaa;
+}
+
+.level-number {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: number-pulse 1s ease-in-out infinite;
+}
+
+@keyframes number-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.stat-changes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-icon {
+  font-size: 1.2rem;
+}
+
+.stat-name {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.stat-arrow {
+  color: #4ECDC4;
+  font-weight: bold;
+}
+
+.stat-new {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4ECDC4;
+}
+
+.stat-change.hp-restored .stat-name {
+  color: #A8E6CF;
+  font-weight: 600;
+}
+
+.levelup-screen .continue-btn {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 48px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #FFE66D 0%, #F0D65C 100%);
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 230, 109, 0.4);
+}
+
+.levelup-screen .continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 230, 109, 0.5);
+}

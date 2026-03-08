@@ -1,0 +1,42 @@
+.puzzle-piece {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 80px;
+  border-radius: 12px;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  touch-action: none;
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.puzzle-piece:active {
+  cursor: grabbing;
+}
+
+.puzzle-piece.dragging {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.piece-display {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 32px;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.piece-label {
+  font-size: 10px;
+  color: rgba(26, 26, 46, 0.7);
+  margin-top: 4px;
+}

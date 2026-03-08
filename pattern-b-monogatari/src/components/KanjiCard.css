@@ -1,0 +1,208 @@
+.kanji-card-wrapper {
+  width: 100%;
+  max-width: 360px;
+  perspective: 1000px;
+}
+
+.kanji-card-container {
+  width: 100%;
+  cursor: pointer;
+}
+
+.kanji-card-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.kanji-card {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  backface-visibility: hidden;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.kanji-card.front {
+  background-color: #FFFDF7;
+  padding: 24px;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kanji-card.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #f8f6f0 0%, #FFFDF7 100%);
+  padding: 20px;
+  transform: rotateY(180deg);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 32px;
+}
+
+.card-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kanji-character {
+  font-size: 120px;
+  font-weight: 900;
+  color: #333;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.kanji-reading {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.flip-hint {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+/* カード裏面 */
+.back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.back-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eee;
+}
+
+.back-kanji {
+  font-size: 48px;
+  font-weight: 900;
+  color: #333;
+}
+
+.back-reading {
+  font-size: 16px;
+  color: #666;
+}
+
+.back-story {
+  background-color: rgba(78, 205, 196, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.back-etymology {
+  padding: 12px 0;
+}
+
+.back-etymology h4,
+.back-parts h4 {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.back-etymology p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.back-parts {
+  padding: 12px 0;
+}
+
+.parts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.part-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.part-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.part-type {
+  font-size: 11px;
+  color: #555;
+  font-weight: 500;
+}
+
+.memory-tip {
+  padding: 8px 0;
+}
+
+.tip-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(135deg, #FFE66D 0%, #FFEB99 100%);
+  padding: 14px 18px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 230, 109, 0.3);
+}
+
+.tip-icon {
+  font-size: 20px;
+}
+
+.tip-bubble p {
+  font-size: 14px;
+  color: #5a4d00;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 400px) {
+  .kanji-character {
+    font-size: 100px;
+  }
+
+  .kanji-card.front {
+    min-height: 420px;
+    padding: 20px;
+  }
+
+  .kanji-card.back {
+    padding: 16px;
+  }
+
+  .back-kanji {
+    font-size: 40px;
+  }
+}

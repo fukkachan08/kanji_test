@@ -1,0 +1,233 @@
+.dungeon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.floor-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #16213E 0%, #1A1A2E 100%);
+  border-radius: 12px;
+  border: 2px solid var(--theme-color, #4ECDC4);
+}
+
+.floor-emoji {
+  font-size: 1.5rem;
+}
+
+.floor-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dungeon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(5, 60px);
+  gap: 2px;
+  background: #0f0f1a;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  font-size: 1.8rem;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.tile-wall {
+  background: linear-gradient(145deg, #3a3a50 0%, #252535 100%);
+  cursor: not-allowed;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.tile-wall:hover {
+  transform: none;
+}
+
+.tile-grass {
+  background: linear-gradient(145deg, #1e3a1e 0%, #0d1f0d 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tile-start {
+  background: linear-gradient(145deg, #2a4a2a 0%, #1a3a1a 100%);
+  animation: pulse-start 2s infinite;
+}
+
+@keyframes pulse-start {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 230, 109, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 230, 109, 0.6);
+  }
+}
+
+.tile-exit {
+  background: linear-gradient(145deg, #2a2a4a 0%, #1a1a3a 100%);
+  animation: pulse-exit 2s infinite;
+}
+
+@keyframes pulse-exit {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(78, 205, 196, 0.6);
+  }
+}
+
+.tile-monster {
+  background: linear-gradient(145deg, #3a1e1e 0%, #2a0f0f 100%);
+  animation: monster-idle 1s infinite ease-in-out;
+}
+
+.tile-boss {
+  background: linear-gradient(145deg, #4a1e2e 0%, #3a0f1f 100%);
+  animation: boss-idle 0.8s infinite ease-in-out;
+  box-shadow:
+    0 0 15px rgba(255, 107, 107, 0.5),
+    inset 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+@keyframes monster-idle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes boss-idle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.player-sprite {
+  font-size: 2rem;
+  animation: player-bounce 0.5s infinite ease-in-out;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes player-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.tile-emoji {
+  font-size: 1.8rem;
+}
+
+.control-pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.control-row {
+  display: flex;
+  gap: 48px;
+}
+
+.control-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #16213E 0%, #0d1525 100%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn span {
+  pointer-events: none;
+}
+
+.control-hint {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+.dungeon-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* レスポンシブ */
+@media (max-width: 400px) {
+  .dungeon-grid {
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+  }
+
+  .tile {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .player-sprite {
+    font-size: 1.7rem;
+  }
+
+  .control-btn {
+    width: 44px;
+    height: 44px;
+  }
+}

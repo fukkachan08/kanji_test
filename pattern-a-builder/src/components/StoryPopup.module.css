@@ -1,0 +1,223 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.correctBadge {
+  display: inline-block;
+  background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: bounce 0.5s ease;
+}
+
+.kanjiDisplay {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.character {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.reading,
+.meaning {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.infoValue {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.storySection {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.storyTitle {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #856404;
+}
+
+.storyText {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.partsSection {
+  margin-bottom: 20px;
+}
+
+.partsTitle {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.partsList {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.partItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 50px;
+}
+
+.partDisplay {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.partLabel {
+  font-size: 0.65rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.nextButton,
+.finishButton {
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nextButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.finishButton {
+  background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+  color: white;
+}
+
+.nextButton:hover,
+.finishButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .popup {
+    padding: 20px;
+  }
+
+  .character {
+    font-size: 4rem;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nextButton,
+  .finishButton {
+    padding: 12px 32px;
+    font-size: 1rem;
+    width: 100%;
+  }
+}

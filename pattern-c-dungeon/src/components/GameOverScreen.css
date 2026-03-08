@@ -1,0 +1,162 @@
+.gameover-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(30, 10, 10, 0.98) 0%, rgba(10, 5, 5, 0.98) 100%);
+  z-index: 400;
+  animation: gameover-fade-in 0.5s ease-out;
+}
+
+@keyframes gameover-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gameover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 32px;
+  background: linear-gradient(145deg, #2a1a1a 0%, #1a0f0f 100%);
+  border-radius: 20px;
+  border: 3px solid #FF6B6B;
+  box-shadow:
+    0 0 30px rgba(255, 107, 107, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 360px;
+  width: 100%;
+  margin: 20px;
+}
+
+.gameover-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.skull {
+  font-size: 4rem;
+  animation: skull-shake 1s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes skull-shake {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.gameover-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #FF6B6B;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(255, 107, 107, 0.5);
+}
+
+.gameover-subtitle {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.stats-summary {
+  display: flex;
+  gap: 24px;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.summary-label {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.summary-value {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.gameover-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.gameover-actions .action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gameover-actions .action-btn.continue {
+  background: linear-gradient(145deg, #4ECDC4 0%, #3DBDB4 100%);
+  color: #1a1a2e;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
+.gameover-actions .action-btn.continue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(78, 205, 196, 0.5);
+}
+
+.gameover-actions .action-btn.restart {
+  background: linear-gradient(145deg, #3a3a4a 0%, #2a2a3a 100%);
+  color: #aaa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gameover-actions .action-btn.restart:hover {
+  background: linear-gradient(145deg, #4a4a5a 0%, #3a3a4a 100%);
+  color: #fff;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn-hint {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 4px;
+}

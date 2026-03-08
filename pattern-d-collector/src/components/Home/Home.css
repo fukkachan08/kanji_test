@@ -1,0 +1,205 @@
+.home-screen {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.home-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* ヘッダー */
+.home-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.app-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2rem;
+  color: #ffe66d;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title-emoji {
+  font-size: 2.5rem;
+}
+
+.app-subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* 進捗カード */
+.progress-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4ecdc4;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #999;
+  margin-left: 4px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ecdc4, #ffe66d);
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+
+/* ステージセクション */
+.stage-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.stage-btn {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.stage-btn:not(:disabled):hover {
+  transform: scale(1.05);
+  border-color: #4ecdc4;
+}
+
+.stage-btn.cleared {
+  background: rgba(78, 205, 196, 0.1);
+  border-color: #4ecdc4;
+}
+
+.stage-btn.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stage-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #999;
+}
+
+.stage-emoji {
+  font-size: 1.2rem;
+}
+
+.stage-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.lock-icon {
+  font-size: 1.5rem;
+}
+
+.cleared-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.8rem;
+  color: #4ecdc4;
+}
+
+/* メニューセクション */
+.menu-section {
+  margin-bottom: 24px;
+}
+
+.menu-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.menu-btn:hover {
+  border-color: #c3b1e1;
+  background: rgba(195, 177, 225, 0.1);
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+}
+
+.menu-label {
+  flex: 1;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.menu-count {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* ヒント */
+.home-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}

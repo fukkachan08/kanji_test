@@ -1,0 +1,218 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f8f6f0 0%, #fffdf7 50%, #f5f3ed 100%);
+  font-family: 'Noto Serif JP', serif;
+}
+
+/* スタート画面 */
+.start-screen {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.start-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.title-kanji {
+  font-size: 56px;
+  font-weight: 900;
+  color: #333;
+  background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.title-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.app-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+  font-size: 24px;
+}
+
+.feature-text {
+  font-size: 14px;
+  color: #444;
+  text-align: left;
+}
+
+.kanji-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.preview-kanji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.preview-more {
+  font-size: 24px;
+  color: #999;
+}
+
+.preview-count {
+  font-size: 14px;
+  color: #4ECDC4;
+  font-weight: 600;
+  padding: 4px 12px;
+  background-color: rgba(78, 205, 196, 0.15);
+  border-radius: 16px;
+}
+
+.start-button {
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #4ECDC4 0%, #44B8AC 100%);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Noto Serif JP', serif;
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+  transition: box-shadow 0.2s ease;
+}
+
+.start-button:hover {
+  box-shadow: 0 8px 24px rgba(78, 205, 196, 0.5);
+}
+
+/* ヘッダー */
+.app-header {
+  padding: 16px 20px;
+  background-color: rgba(255, 253, 247, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* メインコンテンツ */
+.app-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.deck-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.complete-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* フッター */
+.app-footer {
+  padding: 16px 20px;
+  text-align: center;
+  background-color: rgba(255, 253, 247, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-footer p {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 400px) {
+  .title-kanji {
+    font-size: 44px;
+  }
+
+  .title-text {
+    font-size: 22px;
+  }
+
+  .app-subtitle {
+    font-size: 14px;
+  }
+
+  .preview-kanji {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+
+  .start-button {
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+}

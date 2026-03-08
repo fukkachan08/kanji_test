@@ -1,0 +1,196 @@
+.result-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 20, 0.95);
+  padding: 20px;
+  z-index: 200;
+  animation: result-fade-in 0.5s ease-out;
+}
+
+@keyframes result-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 360px;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(145deg, #16213E 0%, #0d1525 100%);
+  border-radius: 20px;
+  border: 3px solid #FFE66D;
+  box-shadow:
+    0 0 30px rgba(255, 230, 109, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trophy-emoji {
+  font-size: 2.5rem;
+  animation: trophy-bounce 1s ease-in-out infinite;
+}
+
+@keyframes trophy-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.result-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFE66D;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(255, 230, 109, 0.5);
+}
+
+.defeated-monster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.monster-emoji-large {
+  font-size: 4rem;
+  filter: grayscale(0.3);
+  animation: defeated-shake 0.5s ease-in-out;
+}
+
+@keyframes defeated-shake {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-10deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+
+.monster-defeated-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+}
+
+.rewards-section {
+  width: 100%;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.rewards-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #888;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.reward-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.reward-icon {
+  font-size: 1.5rem;
+}
+
+.reward-part {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.reward-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.kanji-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: linear-gradient(145deg, #1a2a3e 0%, #0f1a25 100%);
+  border-radius: 12px;
+  border: 1px solid #3a4a5a;
+  width: 100%;
+}
+
+.story-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #4ECDC4;
+  text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+.story-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.95rem;
+  color: #aaa;
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.continue-btn {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #4ECDC4 0%, #3DBDB4 100%);
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(78, 205, 196, 0.5);
+}
+
+.continue-btn:active {
+  transform: translateY(0);
+}

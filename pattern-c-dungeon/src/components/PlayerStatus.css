@@ -1,0 +1,177 @@
+.player-status {
+  background: linear-gradient(145deg, #16213E 0%, #0d1525 100%);
+  border-radius: 12px;
+  padding: 16px;
+  border: 2px solid #2a3a5a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.player-status.compact {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.player-emoji {
+  font-size: 1.5rem;
+}
+
+.player-emoji.large {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.player-level-badge {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.85rem;
+  color: #FFE66D;
+  font-weight: 700;
+}
+
+.player-info-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.player-level {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.9rem;
+  color: #FFE66D;
+  font-weight: 700;
+}
+
+.stat-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888;
+  width: 24px;
+}
+
+.stat-bar-bg {
+  flex: 1;
+  height: 12px;
+  background: #1a1a2e;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-bar-bg.hp {
+  height: 14px;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.stat-bar-fill.hp {
+  background: linear-gradient(90deg, #4ECDC4 0%, #45B7AA 100%);
+  box-shadow: 0 0 8px rgba(78, 205, 196, 0.5);
+}
+
+.stat-bar-fill.xp {
+  background: linear-gradient(90deg, #FFE66D 0%, #F0D65C 100%);
+  box-shadow: 0 0 8px rgba(255, 230, 109, 0.5);
+}
+
+.stat-value {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.75rem;
+  color: #aaa;
+  width: 60px;
+  text-align: right;
+}
+
+.hp-bar-mini {
+  width: 80px;
+  height: 8px;
+  background: #1a1a2e;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hp-bar-mini .hp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ECDC4 0%, #45B7AA 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.collected-parts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.parts-label {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.parts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.part-badge {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.parts-mini {
+  display: flex;
+  gap: 4px;
+}
+
+.part-badge-mini {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
