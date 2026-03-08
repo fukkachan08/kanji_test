@@ -1,12 +1,25 @@
+import { useState } from 'react';
 import { useGameStore } from '../../store/gameStore';
-import { kanjiList, PART_TYPE_NAMES } from '../../data/kanjiData';
+import { kanjiList, ELEMENTS, PERSONALITIES, RARITIES } from '../../data/kanjiData';
+import CharacterCard from '../CharacterCard';
 import './Collection.css';
 
 const Collection = () => {
   const { goToHome, collectedKanji, collectedParts, kanjiLevels } = useGameStore();
+  const [selectedKanji, setSelectedKanji] = useState(null);
 
   const progress = collectedKanji.length;
   const total = kanjiList.length;
+
+  const handleKanjiClick = (kanji, isCollected) => {
+    if (isCollected) {
+      setSelectedKanji(kanji);
+    }
+  };
+
+  const closeDetail = () => {
+    setSelectedKanji(null);
+  };
 
   return (
     <div className="collection-screen">
@@ -27,14 +40,20 @@ const Collection = () => {
           {kanjiList.map((kanji) => {
             const isCollected = collectedKanji.includes(kanji.id);
             const level = kanjiLevels[kanji.id] || 1;
+            const rarity = RARITIES[kanji.rarity] || RARITIES.N;
 
             return (
               <div
                 key={kanji.id}
-                className={`kanji-card ${isCollected ? 'collected' : 'locked'}`}
+                className={`kanji-card ${isCollected ? 'collected' : 'locked'} rarity-${kanji.rarity || 'N'}`}
+                style={isCollected ? { '--rarity-color': rarity.color, '--rarity-glow': rarity.glow } : {}}
+                onClick={() => handleKanjiClick(kanji, isCollected)}
               >
                 {isCollected ? (
                   <>
+                    <div className="card-rarity-stars">
+                      {'★'.repeat(rarity.stars)}
+                    </div>
                     <span className="card-emoji">{kanji.emoji}</span>
                     <span className="card-kanji">{kanji.character}</span>
                     <span className="card-reading">
@@ -107,6 +126,69 @@ const Collection = () => {
           </div>
         </div>
       </div>
+
+      {/* キャラ詳細モーダル */}
+      {selectedKanji && (
+        <div className="detail-modal-overlay" onClick={closeDetail}>
+          <div className="detail-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeDetail}>×</button>
+
+            <div className="modal-character">
+              <CharacterCard
+                kanji={selectedKanji}
+                level={kanjiLevels[selectedKanji.id] || 1}
+                size="large"
+                showDetails={true}
+              />
+            </div>
+
+            {/* キャッチフレーズ */}
+            {selectedKanji.catchphrase && (
+              <div className="modal-catchphrase">
+                「{selectedKanji.catchphrase}」
+              </div>
+            )}
+
+            {/* キャラ情報 */}
+            <div className="modal-info">
+              <div className="modal-traits">
+                <div className="modal-trait" style={{ backgroundColor: ELEMENTS[selectedKanji.element]?.color }}>
+                  <span>{ELEMENTS[selectedKanji.element]?.emoji}</span>
+                  <span>{ELEMENTS[selectedKanji.element]?.name}属性</span>
+                </div>
+                <div className="modal-trait personality">
+                  <span>{PERSONALITIES[selectedKanji.personality]?.emoji}</span>
+                  <span>{PERSONALITIES[selectedKanji.personality]?.name}</span>
+                </div>
+              </div>
+
+              <div className="modal-reading">
+                {selectedKanji.reading.kun && <span className="kun">{selectedKanji.reading.kun}</span>}
+                {selectedKanji.reading.on && <span className="on">（{selectedKanji.reading.on}）</span>}
+              </div>
+
+              <p className="modal-meaning">{selectedKanji.meaning}</p>
+              <p className="modal-story">{selectedKanji.story}</p>
+
+              {/* 構成部首 */}
+              <div className="modal-parts">
+                <p className="parts-label">構成部首</p>
+                <div className="parts-row">
+                  {selectedKanji.parts.map((part, i) => (
+                    <div
+                      key={i}
+                      className="part-chip"
+                      style={{ backgroundColor: part.color }}
+                    >
+                      {part.display}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

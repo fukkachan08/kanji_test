@@ -183,6 +183,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '火で物を焼く様子。',
     emoji: '🍖',
+    element: 'fire',
+    personality: 'cheerful',
+    rarity: 'R',
+    catchphrase: 'おいしく焼けたよ！',
   },
 
   // ===== 木系 =====
@@ -199,6 +203,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '木が3つで、深い森を表す。',
     emoji: '🌲',
+    element: 'wood',
+    personality: 'mysterious',
+    rarity: 'SR',
+    catchphrase: '深い森には秘密がいっぱい...',
   },
   {
     id: 'kanji_009',
@@ -213,6 +221,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '木が2つ並んで林を表す。',
     emoji: '🌳',
+    element: 'wood',
+    personality: 'gentle',
+    rarity: 'N',
+    catchphrase: '仲間と一緒がいちばん！',
   },
   {
     id: 'kanji_010',
@@ -227,6 +239,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '木のそばに人が住む村。',
     emoji: '🏘️',
+    element: 'earth',
+    personality: 'gentle',
+    rarity: 'N',
+    catchphrase: 'みんなで暮らすのが楽しいね',
   },
 
   // ===== にんべん =====
@@ -243,6 +259,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '人が木のそばで休む様子。',
     emoji: '😴',
+    element: 'wood',
+    personality: 'gentle',
+    rarity: 'N',
+    catchphrase: 'たまには休もうよ〜',
   },
   {
     id: 'kanji_012',
@@ -257,6 +277,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '人の本となる体。',
     emoji: '🧍',
+    element: 'earth',
+    personality: 'brave',
+    rarity: 'R',
+    catchphrase: '体が資本だよ！',
   },
   {
     id: 'kanji_013',
@@ -271,6 +295,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '人が手を動かして作る。',
     emoji: '🔨',
+    element: 'earth',
+    personality: 'cheerful',
+    rarity: 'N',
+    catchphrase: 'さあ、作ろう！',
   },
 
   // ===== ごんべん =====
@@ -287,6 +315,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '言葉を舌で話す。',
     emoji: '💬',
+    element: 'word',
+    personality: 'cheerful',
+    rarity: 'N',
+    catchphrase: 'お話しようよ！',
   },
   {
     id: 'kanji_015',
@@ -301,6 +333,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '言葉を目で読む。',
     emoji: '📖',
+    element: 'word',
+    personality: 'wise',
+    rarity: 'R',
+    catchphrase: '本を読むのが大好きなんだ',
   },
   {
     id: 'kanji_016',
@@ -315,6 +351,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '自分（吾）の言葉を語る。',
     emoji: '🗣️',
+    element: 'word',
+    personality: 'wise',
+    rarity: 'R',
+    catchphrase: '物語を語ってあげよう',
   },
 
   // ===== くにがまえ =====
@@ -331,6 +371,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '宝玉を囲んで守る国。',
     emoji: '🏰',
+    element: 'earth',
+    personality: 'brave',
+    rarity: 'SR',
+    catchphrase: 'わが国を守る！',
   },
   {
     id: 'kanji_018',
@@ -345,6 +389,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '囲われた庭園。',
     emoji: '🏞️',
+    element: 'wood',
+    personality: 'gentle',
+    rarity: 'R',
+    catchphrase: '庭園でのんびりしよう',
   },
 
   // ===== 独体字 =====
@@ -360,6 +408,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '山の形をそのまま表した象形文字。',
     emoji: '⛰️',
+    element: 'earth',
+    personality: 'brave',
+    rarity: 'N',
+    catchphrase: '山のように動じない心！',
   },
   {
     id: 'kanji_020',
@@ -373,6 +425,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '水が流れる様子を表した象形文字。',
     emoji: '🏞️',
+    element: 'water',
+    personality: 'cool',
+    rarity: 'N',
+    catchphrase: '流れるように生きよう',
   },
 
   // ===== 日・月 =====
@@ -389,6 +445,10 @@ export const kanjiList = [
     difficulty: 1,
     story: '太陽と月が一緒になって明るく照らす。',
     emoji: '☀️',
+    element: 'light',
+    personality: 'cheerful',
+    rarity: 'SR',
+    catchphrase: '明るく照らすよ！',
   },
   {
     id: 'kanji_022',
@@ -403,6 +463,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '太陽が動いて時を刻む。',
     emoji: '⏰',
+    element: 'light',
+    personality: 'wise',
+    rarity: 'R',
+    catchphrase: '時は金なり！',
   },
 
   // ===== 心系 =====
@@ -419,6 +483,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '田んぼで働きながら心で思う。',
     emoji: '🤔',
+    element: 'mind',
+    personality: 'wise',
+    rarity: 'R',
+    catchphrase: 'よく考えてから行動しよう',
   },
   {
     id: 'kanji_024',
@@ -433,6 +501,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '音を心で受け取る意味。',
     emoji: '💭',
+    element: 'mind',
+    personality: 'mysterious',
+    rarity: 'SR',
+    catchphrase: '君の意志は何を求めてる？',
   },
 
   // ===== しんにょう =====
@@ -449,6 +521,10 @@ export const kanjiList = [
     difficulty: 2,
     story: '首を向けて進む道。',
     emoji: '🛤️',
+    element: 'earth',
+    personality: 'wise',
+    rarity: 'SSR',
+    catchphrase: '道を究めよ！',
   },
 ];
 

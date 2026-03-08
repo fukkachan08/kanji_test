@@ -253,3 +253,91 @@
 .action-btn.sub:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* キャッチフレーズ吹き出し */
+.catchphrase-bubble {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 12px 20px;
+  margin-top: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: bubble-appear 0.5s 0.8s both;
+}
+
+.catchphrase-bubble::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.95);
+}
+
+.catchphrase-text {
+  font-size: 1rem;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+@keyframes bubble-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* キャラクター詳細セクション */
+.character-details-section {
+  margin-bottom: 20px;
+}
+
+.character-traits {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trait-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.trait-badge.element {
+  color: #1a1a2e;
+}
+
+.trait-badge.personality {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.trait-badge.rarity {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid;
+  color: white;
+}
+
+.trait-emoji {
+  font-size: 1.1rem;
+}
+
+.trait-stars {
+  color: #ffe66d;
+  letter-spacing: 2px;
+}
+
+.trait-name {
+  font-weight: 500;
+}

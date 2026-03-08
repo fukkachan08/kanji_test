@@ -62,12 +62,47 @@
 
 .kanji-card.collected {
   background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(78, 205, 196, 0.3);
+  border: 2px solid var(--rarity-color, rgba(78, 205, 196, 0.3));
+  box-shadow: var(--rarity-glow, none);
+  cursor: pointer;
 }
 
 .kanji-card.collected:hover {
   transform: scale(1.05);
-  border-color: #4ecdc4;
+  border-color: var(--rarity-color, #4ecdc4);
+}
+
+/* レアリティ別エフェクト */
+.kanji-card.rarity-SR {
+  animation: card-shimmer 3s infinite;
+}
+
+.kanji-card.rarity-SSR {
+  animation: card-shimmer 2s infinite, card-rainbow 4s infinite;
+}
+
+@keyframes card-shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes card-rainbow {
+  0% { border-color: #FF6B6B; }
+  25% { border-color: #FFE66D; }
+  50% { border-color: #4ECDC4; }
+  75% { border-color: #C3B1E1; }
+  100% { border-color: #FF6B6B; }
+}
+
+.card-rarity-stars {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5rem;
+  color: var(--rarity-color, #B0BEC5);
+  text-shadow: 0 0 5px var(--rarity-color);
+  letter-spacing: 1px;
 }
 
 .kanji-card.locked {
@@ -195,4 +230,161 @@
   width: 16px;
   height: 16px;
   border-radius: 4px;
+}
+
+/* 詳細モーダル */
+.detail-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  animation: fade-in 0.2s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.detail-modal {
+  background: linear-gradient(180deg, #1a2a1e 0%, #16213e 100%);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 360px;
+  width: 100%;
+  position: relative;
+  animation: modal-appear 0.3s;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-character {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.modal-catchphrase {
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.modal-info {
+  text-align: center;
+}
+
+.modal-traits {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.modal-trait {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #1a1a2e;
+}
+
+.modal-trait.personality {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.modal-reading {
+  font-size: 1.3rem;
+  color: #4ecdc4;
+  margin-bottom: 8px;
+}
+
+.modal-reading .on {
+  color: #999;
+}
+
+.modal-meaning {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.modal-story {
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.modal-parts {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.modal-parts .parts-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.parts-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.part-chip {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  padding: 8px 12px;
+  border-radius: 8px;
 }

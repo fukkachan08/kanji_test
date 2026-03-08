@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useGameStore } from '../../store/gameStore';
-import { kanjiList } from '../../data/kanjiData';
+import { kanjiList, ELEMENTS, PERSONALITIES, RARITIES } from '../../data/kanjiData';
+import CharacterCard from '../CharacterCard';
 import './Result.css';
 
 const Result = () => {
@@ -41,11 +42,37 @@ const Result = () => {
         {/* キャラGET演出 */}
         <div className={`character-get ${showCharacter ? 'show' : ''}`}>
           <div className="character-glow" />
-          <div className="character-kanji">
-            <span className="emoji">{kanji.emoji}</span>
-            <span className="kanji">{kanji.character}</span>
-          </div>
+
+          {/* キャラクターカード */}
+          <CharacterCard kanji={kanji} size="large" showDetails={false} />
+
           <p className="get-text">GET!</p>
+
+          {/* キャッチフレーズ吹き出し */}
+          {kanji.catchphrase && (
+            <div className="catchphrase-bubble">
+              <span className="catchphrase-text">「{kanji.catchphrase}」</span>
+            </div>
+          )}
+        </div>
+
+        {/* キャラクター詳細情報 */}
+        <div className="character-details-section">
+          {/* 属性・性格 */}
+          <div className="character-traits">
+            <div className="trait-badge element" style={{ backgroundColor: ELEMENTS[kanji.element]?.color }}>
+              <span className="trait-emoji">{ELEMENTS[kanji.element]?.emoji}</span>
+              <span className="trait-name">{ELEMENTS[kanji.element]?.name}属性</span>
+            </div>
+            <div className="trait-badge personality">
+              <span className="trait-emoji">{PERSONALITIES[kanji.personality]?.emoji}</span>
+              <span className="trait-name">{PERSONALITIES[kanji.personality]?.name}</span>
+            </div>
+            <div className="trait-badge rarity" style={{ borderColor: RARITIES[kanji.rarity]?.color }}>
+              <span className="trait-stars">{'★'.repeat(RARITIES[kanji.rarity]?.stars || 1)}</span>
+              <span className="trait-name">{RARITIES[kanji.rarity]?.name}</span>
+            </div>
+          </div>
         </div>
 
         {/* 漢字情報 */}
